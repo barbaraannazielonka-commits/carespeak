@@ -2,9 +2,7 @@
   "name": "react-example",
   "private": true,
   "version": "0.0.0",
-  git add package.json,
-git commit -m "Pin bun to 1.4.3 for Workers Builds",
-git push,
+  "packageManager": "bun@1.4.3",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",

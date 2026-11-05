@@ -1,0 +1,6 @@
+{
+  "name": "CareSpeak: Clinical English Simulation Lab",
+  "description": "Interactive educational simulation and audio practice lab for healthcare students to master patient-centered communication, procedural explanations, and de-jargoning in English.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

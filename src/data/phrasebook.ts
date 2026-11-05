@@ -1,0 +1,196 @@
+import { PhraseItem } from '../types/simulation';
+
+export const PHRASEBOOK_CATEGORIES = [
+  'All Phrases',
+  '1. Introducing & Asking Consent',
+  '2. Explaining Physical Procedures',
+  '3. Expressing Empathy & Reassurance',
+  '4. De-Jargoning Common Medical Terms',
+  '5. Teach-Back & Checking Understanding',
+  '6. De-escalating Fear & Anxiety',
+  '7. SBAR Professional Handoff',
+] as const;
+
+export const PHRASEBOOK_ITEMS: PhraseItem[] = [
+  // 1. Introducing & Asking Consent
+  {
+    id: 'p1',
+    category: '1. Introducing & Asking Consent',
+    title: 'Professional Nursing Introduction (AIDET)',
+    englishText: 'Good morning. My name is Alex, and I am a nursing student caring for you today. Before we begin, could you please state your full name and date of birth?',
+    phoneticGuide: '/ɡʊd ˈmɔːrnɪŋ. maɪ neɪm ɪz ˈæləks.../',
+    clinicalPurpose: 'AIDET protocol: Acknowledges patient, introduces role, and verifies two patient identifiers for safety.',
+    patientFriendlyWhy: 'Reassures the patient right away who you are, what your role is, and confirms their safety.',
+    jargonToAvoid: 'Never say: "I am here to intake your chart data."',
+  },
+  {
+    id: 'p2',
+    category: '1. Introducing & Asking Consent',
+    title: 'Asking Permission Before Touching',
+    englishText: 'Is it alright if I place this cushion behind your back and rest your arm here on the table?',
+    phoneticGuide: '/ɪz ɪt ɔːlˈraɪt ɪf aɪ pleɪs ðɪs ˈkʊʃən bɪˈhaɪnd jɔːr bæk.../',
+    clinicalPurpose: 'Explicit procedural consent before physical contact.',
+    patientFriendlyWhy: 'Gives the patient control over their personal space and prevents sudden startled reactions.',
+  },
+  {
+    id: 'p3',
+    category: '1. Introducing & Asking Consent',
+    title: 'Setting Expectations on Encounter Duration',
+    englishText: 'Our visit will take about fifteen minutes. We will review what brought you in, check your vital signs, and discuss next steps with Dr. Hayes.',
+    phoneticGuide: '/aʊər ˈvɪzɪt wɪl teɪk əˈbaʊt fɪfˈtin ˈmɪnɪts.../',
+    clinicalPurpose: 'Duration step of AIDET: reduces patient uncertainty and impatience.',
+    patientFriendlyWhy: 'Patients often feel trapped in clinics; knowing the timeframe relieves clock-watching stress.',
+  },
+
+  // 2. Explaining Physical Procedures
+  {
+    id: 'p4',
+    category: '2. Explaining Physical Procedures',
+    title: 'Explaining Blood Pressure Measurement',
+    englishText: 'I am going to wrap this fabric cuff around your upper arm. It will feel like a firm, snug squeeze for about twenty seconds, and then it will release completely.',
+    phoneticGuide: '/aɪ æm ˈɡoʊɪŋ tu ræp ðɪs ˈfæbrɪk kʌf... fil laɪk ə fɜːrm, snʌɡ skwiz.../',
+    clinicalPurpose: 'Sensory and chronological framing of automated sphygmomanometry.',
+    patientFriendlyWhy: 'Describing the sensation as a "snug squeeze" prevents anxiety when the cuff pumps up tightly.',
+    jargonToAvoid: 'Avoid: "I am performing sphygmomanometer calibration."',
+  },
+  {
+    id: 'p5',
+    category: '2. Explaining Physical Procedures',
+    title: 'Explaining Stethoscope Auscultation (Lungs/Heart)',
+    englishText: 'I would like to listen to your lungs with my stethoscope. The metal disc might feel a little cool at first. Every time you feel the circle touch your skin, please take a slow, gentle breath in through your mouth.',
+    phoneticGuide: '/aɪ wʊd laɪk tu ˈlɪsən tu jɔːr lʌŋz wɪð maɪ ˈstɛθəˌskoʊp.../',
+    clinicalPurpose: 'Auscultation instructions with thermal warning and respiratory coaching.',
+    patientFriendlyWhy: 'Telling them the metal is cool prevents shivering; mouth-breathing ensures audible breath sounds.',
+    jargonToAvoid: 'Avoid: "I need to auscultate your bibasilar pulmonary fields."',
+  },
+  {
+    id: 'p6',
+    category: '2. Explaining Physical Procedures',
+    title: 'Explaining Fingerstick Blood Sugar Check',
+    englishText: 'I am going to check your blood sugar level. You will feel a quick, tiny pinch on the side of your fingertip, like a tiny prick, and it will be over in one second.',
+    phoneticGuide: '/ju wɪl fil ə kwɪk, ˈtaɪni pɪntʃ... laɪk ə ˈtaɪni prɪk.../',
+    clinicalPurpose: 'Capillary blood glucose testing preparation.',
+    patientFriendlyWhy: 'Using "side of the fingertip" causes far less pain than the sensitive center pad.',
+    jargonToAvoid: 'Avoid: "Lancet capillary dermal puncture."',
+  },
+  {
+    id: 'p7',
+    category: '2. Explaining Physical Procedures',
+    title: 'Explaining an ECG / EKG Heart Tracing',
+    englishText: 'This heart tracing is completely painless. It does not send any electricity into your body—it only listens and records your heart’s natural rhythm like a microphone.',
+    phoneticGuide: '/ðɪs hɑːrt ˈtreɪsɪŋ ɪz kəmˈplitli ˈpeɪnlɪs... ɪt ˈoʊnli ˈlɪsənz.../',
+    clinicalPurpose: 'Clarifies passive nature of 12-lead electrocardiography.',
+    patientFriendlyWhy: 'Many patients secretly fear the machine will deliver an electric shock.',
+  },
+
+  // 3. Expressing Empathy & Reassurance
+  {
+    id: 'p8',
+    category: '3. Expressing Empathy & Reassurance',
+    title: 'Validating Fear of Symptoms',
+    englishText: 'I hear how scary it was when the room started spinning. Anyone would feel frightened in that moment, but you are in a safe place now, and we are going to figure this out together.',
+    phoneticGuide: '/aɪ hɪr haʊ ˈskɛri ɪt wʌz... ju ɑːr ɪn ə seɪf pleɪs naʊ.../',
+    clinicalPurpose: 'Empathetic validation (NURSE framework: Naming, Understanding, Respecting, Supporting, Exploring).',
+    patientFriendlyWhy: 'Normalizes their terror so they feel supported rather than embarrassed or weak.',
+  },
+  {
+    id: 'p9',
+    category: '3. Expressing Empathy & Reassurance',
+    title: 'Partnering in Recovery Decisions',
+    englishText: 'Your comfort and wishes are at the center of everything we do today. If anything feels uncomfortable or if you need a break, please let me know right away.',
+    phoneticGuide: '/jɔːr ˈkʌmfərt ænd ˈwɪʃɪz ɑːr æt ðə ˈsɛntər.../',
+    clinicalPurpose: 'Shared decision-making and patient empowerment.',
+    patientFriendlyWhy: 'Restores agency to patients who feel powerless in healthcare environments.',
+  },
+
+  // 4. De-Jargoning Common Medical Terms
+  {
+    id: 'p10',
+    category: '4. De-Jargoning Common Medical Terms',
+    title: 'Explaining "Orthostatic Hypotension"',
+    englishText: 'When we say your blood pressure dropped when standing, think of it like this: gravity pulls some blood down toward your legs, and when you are low on fluids, your body needs a minute to catch up and pump it back to your head.',
+    phoneticGuide: '/θɪŋk ʌv ɪt laɪk ðɪs: ˈɡrævɪti pʊlz sʌm blʌd daʊn.../',
+    clinicalPurpose: 'Translating hemodynamic postural physiology into everyday mechanical analogies.',
+    patientFriendlyWhy: 'Takes away the fear of having a damaged heart or brain by showing it is a simple fluid balance issue.',
+  },
+  {
+    id: 'p11',
+    category: '4. De-Jargoning Common Medical Terms',
+    title: 'Explaining "NPO" (Nothing by Mouth)',
+    englishText: 'For your upcoming test, we need your stomach completely empty. That means nothing to eat or drink—not even water, gum, or mints—starting at midnight.',
+    phoneticGuide: '/wi nid jɔːr ˈstʌmək kəmˈplitli ˈɛmpti... nɑːt ˈivən ˈwɔːtər.../',
+    clinicalPurpose: 'Plain-language aspiration prevention instructions.',
+    patientFriendlyWhy: 'Patients often assume "nothing to eat" means they can still drink tea or chew gum; clear wording prevents surgery cancellations.',
+    jargonToAvoid: 'Avoid: "You are placed on strict NPO status."',
+  },
+  {
+    id: 'p12',
+    category: '4. De-Jargoning Common Medical Terms',
+    title: 'Explaining "Edema" (Swelling)',
+    englishText: 'We notice some mild swelling around your ankles. This is simply extra fluid resting under the skin, like a sponge holding a bit of water.',
+    phoneticGuide: '/wi ˈnoʊtɪs sʌm maɪld ˈswɛlɪŋ əˈraʊnd jɔːr ˈæŋkəlz.../',
+    clinicalPurpose: 'Explaining peripheral edema without causing panic about organ failure.',
+    patientFriendlyWhy: 'Patients often fear swelling means irreversible kidney destruction.',
+    jargonToAvoid: 'Avoid: "You have 2+ bilateral pitting pretibial edema."',
+  },
+
+  // 5. Teach-Back & Checking Understanding
+  {
+    id: 'p13',
+    category: '5. Teach-Back & Checking Understanding',
+    title: 'Teach-Back for Safe Movement & Fall Prevention',
+    englishText: 'I want to make sure I explained everything clearly. In your own words, could you walk me through the steps you will take when you get out of bed tomorrow morning?',
+    phoneticGuide: '/ɪn jɔːr oʊn wɜːrdz, kʊd ju wɔːk mi θru ðə stɛps.../',
+    clinicalPurpose: 'Gold-standard Teach-Back method: places burden of clarity on the clinician.',
+    patientFriendlyWhy: 'Phrasing it as "to make sure I explained clearly" stops the patient from feeling like they are being quizzed.',
+  },
+  {
+    id: 'p14',
+    category: '5. Teach-Back & Checking Understanding',
+    title: 'Teach-Back for New Medication Schedule',
+    englishText: 'We covered a lot of new information about your prescription. When you tell your family about this medicine tonight, how will you explain when and how to take it?',
+    phoneticGuide: '/wɛn ju tɛl jɔːr ˈfæməli əˈbaʊt ðɪs ˈmɛdəsən təˈnaɪt.../',
+    clinicalPurpose: 'Third-party perspective Teach-Back technique.',
+    patientFriendlyWhy: 'Framing it as explaining to a partner or family member makes recall natural and unstressed.',
+  },
+
+  // 6. De-escalating Fear & Anxiety
+  {
+    id: 'p15',
+    category: '6. De-escalating Fear & Anxiety',
+    title: 'Guided Deep Breathing During Acute Panic',
+    englishText: 'Let’s pause right here together. Put both feet flat on the floor. Breathe in slowly through your nose for four seconds... hold it... and now blow it gently out through your mouth like you are blowing out a candle.',
+    phoneticGuide: '/put boʊθ fit flæt ɑːn ðə flɔːr... briz ɪn ˈsloʊli θru jɔːr noʊz.../',
+    clinicalPurpose: 'Vagal nerve stimulation and physical grounding for panic reduction.',
+    patientFriendlyWhy: 'Concrete physical actions interrupt runaway adrenaline surges.',
+  },
+  {
+    id: 'p16',
+    category: '6. De-escalating Fear & Anxiety',
+    title: 'Reframing Normal Diagnostic Findings',
+    englishText: 'It is completely understandable to worry about the worst-case scenario. The tests we did today show your heart rhythm is regular and your blood vessels are healthy. Your body is just asking for more rest and hydration.',
+    phoneticGuide: '/ðə tɛsts wi dɪd təˈdeɪ ʃoʊ jɔːr hɑːrt ˈrɪðəm ɪz ˈrɛɡjələr.../',
+    clinicalPurpose: 'Cognitive reframing of benign clinical findings.',
+    patientFriendlyWhy: 'Provides definitive positive evidence to displace catastrophic thinking.',
+  },
+
+  // 7. SBAR Professional Handoff
+  {
+    id: 'p17',
+    category: '7. SBAR Professional Handoff',
+    title: 'Situation & Background (SBAR Part 1)',
+    englishText: 'Dr. Hayes, this is the SBAR report for Elena Vance, a 34-year-old female in Room 3 who arrived with acute postural dizziness and near-syncope after 24 hours of fasting and high caffeine intake.',
+    phoneticGuide: '/ðɪs ɪz ðə ˈɛsˌbɑːr rɪˈpɔːrt fɔːr ɪˈleɪnə væns.../',
+    clinicalPurpose: 'Crisp clinical situation and contextual background transmission.',
+    patientFriendlyWhy: 'Ensures clear interprofessional communication so the patient receives coordinated, timely care.',
+  },
+  {
+    id: 'p18',
+    category: '7. SBAR Professional Handoff',
+    title: 'Assessment & Recommendation (SBAR Part 2)',
+    englishText: 'Her sitting BP was 102/64, dropping to 88/56 with a compensatory pulse rise to 106 upon standing. Blood glucose is normal at 88. I recommend oral rehydration with 500 mL water, fall precaution education, and a repeat standing BP check before discharge.',
+    phoneticGuide: '/aɪ ˌrɛkəˈmɛnd ˈɔːrəl ˌrihaɪˈdreɪʃən... fɔːl prɪˈkɔːʃən ˌɛdʒʊˈkeɪʃən.../',
+    clinicalPurpose: 'Concrete numerical assessment and actionable nursing recommendation.',
+    patientFriendlyWhy: 'Direct recommendations show leadership and protect patient safety.',
+  },
+];
